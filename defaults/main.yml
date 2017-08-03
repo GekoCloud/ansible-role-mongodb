@@ -1,0 +1,50 @@
+---
+# defaults file for mongodb
+
+mongodb_disable_thp: True
+mongodb_enable_logrotate: True
+mongodb_create_admin_user: False
+mongodb_enable_logrotate: False
+mongodb_wait_for: True
+mongodb_wait_for_timeout: '600'
+
+mongodb_maj_version: '3'
+mongodb_min_version: '4'
+mongodb_init_system: 'systemd'
+mongodb_admin_user: 'admin'
+# Format for mongodb_shell:
+#   db_name:
+#     - command1
+#     - command2
+mongodb_shell: {}
+# Format for mongodb_users:
+#   - name     : Username
+#     database : Which database to grant access
+#     password : Password
+#     roles    : List of roles
+mongodb_users: []
+
+## Config
+# storage
+mongodb_storage_dbpath: '/var/lib/mongodb'
+mongodb_storage_journal_enabled: 'true'
+mongodb_storage_engine: ''
+# systemLog
+mongodb_systemlog_destination: 'file'
+mongodb_systemlog_path: '/var/log/mongodb/mongod.log'
+mongodb_systemlog_logappend: 'true'
+mongodb_systemlog_logrotate: 'rename'
+# processManagement
+mongodb_processmanagement_fork: 'false'
+# net
+mongodb_net_port: '27017'
+mongodb_net_bindip: '127.0.0.1'
+mongodb_net_ssl_mode: ''
+# security
+mongodb_security_authorization: 'disabled'
+mongodb_security_clusterauthmode: 'keyFile'
+# replication
+mongodb_replication_replsetname: ''
+mongodb_replication_oplogsizemb: ''
+# parameters
+mongodb_setparameter: []

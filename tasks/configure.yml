@@ -1,0 +1,25 @@
+- name: Configure mongodb server
+  template:
+    src: 'mongod.conf.j2'
+    dest: '/etc/mongod.conf'
+    owner: 'root'
+    group: 'root'
+    mode: '0644'
+  notify: restart mongodb
+
+- name: Ensure {{ mongodb_net_ssl_pemkeyfile }} has right perms
+  file:
+    path: '{{ mongodb_net_ssl_pemkeyfile }}'
+    owner: '{{ mongodb_user }}'
+  when: mongodb_net_ssl_pemkeyfile is defined
+
+- name: Ensure {{ mongodb_security_keyfile }} has right perms
+  file:
+    path: '{{ mongodb_security_keyfile }}'
+    owner: '{{ mongodb_user }}'
+  when: mongodb_security_keyfile is defined
+
+- name: Ensure {{ mongodb_storage_dbpath }} has right perms
+  file:
+    path: '{{ mongodb_storage_dbpath }}'
+    owner: '{{ mongodb_user }}'

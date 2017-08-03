@@ -1,0 +1,14 @@
+- name: Install required pip package
+  pip:
+    name: 'pymongo'
+
+- name: Add mongodb apt key
+  apt_key:
+    keyserver: 'keyserver.ubuntu.com'
+    id: '0C49F3730359A14518585931BC711F9BA15703C6'
+    state: 'present'
+
+- name: Add mongodb repos
+  apt_repository:
+    state: 'present'
+    repo: 'deb http://repo.mongodb.org/apt/ubuntu {{ ansible_lsb.codename }}/mongodb-org/{{ mongodb_maj_version }}.{{ mongodb_min_version }} multiverse'

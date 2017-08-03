@@ -1,0 +1,12 @@
+---
+# tasks file for mongodb
+
+- include: '{{ item }}.yml'
+  with_items:
+    - 'requirements'
+    - 'install'
+    - 'configure'
+    - 'service'
+    - 'admin'
+  tags:
+    - mongodb

@@ -1,0 +1,7 @@
+mongodb_disable_thp: False
+mongodb_create_admin_user: True
+mongodb_admin_pass: 'admin'
+mongodb_net_bindip: ''
+mongodb_security_authorization: 'enabled'
+mongodb_setparameter:
+  failIndexKeyTooLong: 'false'
