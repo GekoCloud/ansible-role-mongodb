@@ -4,7 +4,7 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 2.1
+  min_ansible_version: 2.2
 
   platforms:
   - name: Ubuntu
@@ -19,6 +19,12 @@ galaxy_info:
     - mongodb
 
 dependencies:
+- name: disable-thp
+  src: 'https://github.com/GekoCloud/ansible-role-disable-thp.git'
+  scm: git
+  version: '1.1'
+  disable_thp_init_system: '{{ mongodb_init_system }}'
+  when: mongodb_disable_thp
 - name: python-pip
   src: 'https://github.com/dpujadas/ansible-role-python-pip.git'
   scm: git

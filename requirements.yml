@@ -1,4 +1,8 @@
 ## Just for travis testing, dependencies are managed by meta/main.yml
+# disable-thp
+- src: https://github.com/GekoCloud/ansible-role-disable-thp.git
+  version: '1.1'
+  name: disable-thp
 # python-pip
 - src: https://github.com/dpujadas/ansible-role-python-pip.git
   version: master

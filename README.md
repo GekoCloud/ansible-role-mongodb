@@ -52,4 +52,4 @@ License
 
 MIT
 
-[![Build Status](https://travis-ci.org/dpujadas/ansible-role-mongodb.svg?branch=master)](https://travis-ci.org/dpujadas/ansible-role-mongodb)
+[![Build Status](https://travis-ci.org/GekoCloud/ansible-role-mongodb.svg?branch=master)](https://travis-ci.org/GekoCloud/ansible-role-mongodb)
