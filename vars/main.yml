@@ -2,3 +2,4 @@
 # vars file for mongodb
 
 mongodb_user: 'mongodb'
+mongodb_group: 'mongodb'

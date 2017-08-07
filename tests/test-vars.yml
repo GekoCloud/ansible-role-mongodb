@@ -4,3 +4,4 @@ mongodb_net_bindip: ''
 mongodb_security_authorization: 'enabled'
 mongodb_setparameter:
   failIndexKeyTooLong: 'false'
+mongodb_storage_dbpath: '/srv/mongodb'

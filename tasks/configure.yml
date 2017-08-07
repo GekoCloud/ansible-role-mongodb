@@ -19,7 +19,9 @@
     owner: '{{ mongodb_user }}'
   when: mongodb_security_keyfile is defined
 
-- name: Ensure {{ mongodb_storage_dbpath }} has right perms
+- name: Ensure {{ mongodb_storage_dbpath }} exists and has right perms
   file:
     path: '{{ mongodb_storage_dbpath }}'
     owner: '{{ mongodb_user }}'
+    group: '{{ mongodb_group }}'
+    state: 'directory'
